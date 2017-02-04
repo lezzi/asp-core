@@ -1,0 +1,35 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Join .Core";
+}
+
+<div class="content-center">
+    <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        <h1 class="mb-4 text-center">Join .Core</h1>
+
+        
+        <div class="input-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="row-control" />
+        </div>
+        
+        <div class="input-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="row-control" />
+        </div>
+        
+        <div class="input-group">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="row-control" />
+        </div>
+        
+        <div asp-validation-summary="All" class="validation text-danger"></div>
+
+       
+        <button type="submit" class="btn primary-btn big-btn">Sign up</button>
+    </form>
+    
+    </div>
+@section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }

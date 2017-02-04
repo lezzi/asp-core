@@ -1,0 +1,54 @@
+﻿button.btn, label.btn{
+    min-height: 32px;
+    font-size: 16px;
+    padding: 4px 32px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+button.primary-btn, label.primary-btn{
+    background: #68217A;
+}
+
+button.primary-btn:hover, label.primary-btn:hover, button.primary-btn:focus, label.primary-btn:focus{
+    color: #FFFFFF;
+}
+
+button.light-btn, label.light-btn{
+    background: #CF18FD;
+}
+
+button.big-btn, label.big-btn{
+    height: 42px;
+    line-height: 42px;
+    padding: 0px 32px !important;
+    width: 100%;
+}
+
+
+button.link-btn{
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #4E78CA;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    height: auto;
+    min-height: 10px;
+    min-width: 10px;
+    width: auto;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+button.link-btn:hover, button.light-btn:active{
+    color: #68217A;
+}

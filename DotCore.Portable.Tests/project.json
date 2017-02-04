@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "NETStandard.Library": "1.6.1",
+    "DotCore.Portable.DataAccess": "*",
+    "DotCore.Portable.BusinessLogic": "*",
+    "NUnit": "3.6.0",
+    "dotnet-test-nunit": "3.4.0-beta-3"
+  },
+  "testRunner": "nunit",
+  "frameworks": {
+    "net461": {
+      "dependencies": {
+        "Moq": "4.5.30"
+      }
+    }
+  },
+  "buildOptions": {
+    "nowarn": []
+  }
+}

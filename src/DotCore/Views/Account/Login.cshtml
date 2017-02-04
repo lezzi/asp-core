@@ -1,0 +1,32 @@
+﻿@using System.Collections.Generic
+@using DotCore.Portable.DataAccess.Entities
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@model LoginViewModel
+@inject SignInManager<User> SignInManager
+
+@{
+    ViewData["Title"] = "Sign in";
+}
+
+<div class="content-center">
+    <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        <h1 class="mb-4 text-center">Sign in to .Core</h1>
+
+        <div class="input-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="row-control" />
+        </div>
+        <div class="input-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="row-control" />
+        </div>
+
+        <div asp-validation-summary="All" class="text-danger validation"></div>
+
+        <button type="submit" class="btn primary-btn big-btn">Sign in</button>
+    </form>
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,38 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "Content/app/**/*.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/lib.min.css",
+    "inputFiles": [
+      "Content/lib/**/bootstrap.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/lib.js",
+    "inputFiles": [
+      "Content/lib/jquery/jquery.js",
+      "Content/lib/tether/dist/js/tether.js",
+      "Content/lib/**/*.js",
+      "!js/ignore.js" // start with a ! to exclude files
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.js",
+    "inputFiles": [
+      "Content/app/**/*.js",
+      "!js/ignore.js" // start with a ! to exclude files
+    ]
+  }
+]

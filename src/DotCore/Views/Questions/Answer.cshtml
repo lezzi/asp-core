@@ -1,0 +1,19 @@
+﻿@using DotCore.Portable.BusinessLogic
+@using DotCore.Portable.BusinessLogic.Models
+@model DotCore.Portable.BusinessLogic.Models.AnswerModel
+@inject IUserProvider UserProvider;
+
+<div class="mt-3" id="@Model.Id">
+    <div class="d-flex">
+        @if (UserProvider.CurrentUserId == Model.Question.User.Id && !Model.Question.IsAnswered)
+        {
+            <button class="inline-center user-details-container mx-2 link-btn"
+                    onclick="acceptAnswer(@Model.Id)">
+                Accept answer
+            </button>
+        }
+        
+        <span class="user-details-container question-optional inline-center mr-2 ml-auto">@Model.User.Email</span>
+    </div>
+    <div class="answer @(Model.IsAccepted ? "accepted" : null)">@Html.Raw(Uri.UnescapeDataString(Model.Description))</div>
+</div>

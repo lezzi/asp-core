@@ -1,0 +1,59 @@
+﻿.input span {
+    margin: 0px 0px 8px 0px;
+    display: inline-block;
+    font-size: 16px;
+    color: #333534;
+}
+
+input, select {
+    margin: 0px;
+    min-height: 32px;
+    padding: 2px 8px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #CF18FD;
+    outline: none !important;
+    color: #333534;
+}
+
+input.row-control, select.row-control {
+    height: 40px;
+    width: 100%;
+}
+
+input,select,input.row-control, select.row-control:hover {
+    border: 2px solid #CF18FD;
+}
+
+.input-group:nth-of-type(1) {
+    margin: 0px 0px 10px 0px;
+}
+
+.input-group {
+    display: block;
+    box-sizing: border-box;
+    margin: 20px 0px 0px 0px;
+    width: 100%;
+    min-height: 67px;
+}
+
+.input-group label {
+    margin: 0px 0px 8px 0px;
+    display: inline-block;
+    font-size: 16px;
+    color: #333534;
+}
+
+.validation {
+    overflow: auto;
+    margin: 0px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+}
+
+.validation ul {
+    margin: 20px 0 20px 0;
+}

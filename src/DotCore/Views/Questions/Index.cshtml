@@ -1,0 +1,41 @@
+﻿@using System.Diagnostics
+@using DotCore.Portable.BusinessLogic.Models
+@using Microsoft.Extensions.Primitives
+@model IEnumerable<QuestionModel>
+
+@{
+    ViewData["Title"] = "Questions";
+}
+
+
+<div class="container main-container">
+    <form method="GET">
+        <h1 class="inline-center">Help .Core community</h1>
+        
+        @{
+            string status = null;
+            StringValues values;
+            if (Context.Request.Query.TryGetValue("status", out values))
+            {
+                status = values[0];
+            }
+
+            Debug.WriteLine(string.Equals(status, "All", StringComparison.OrdinalIgnoreCase) ? "selected" : null);
+        }
+        
+       
+        <select class="questions-status-container" onchange="this.form.submit()"
+                asp-items="@Html.GetEnumSelectList<QuestionStatus>()"
+                asp-for="@status">           
+        </select>
+    </form>
+    
+    <div>
+        @foreach (var question in Model)
+        {
+            <article>
+                <a class="question-preview @(question.IsAnswered ? "answered" : null)" asp-controller="Questions" asp-action="Question" asp-route-id="@question.Id">@question.Title</a>
+            </article>
+        }
+    </div>
+</div>

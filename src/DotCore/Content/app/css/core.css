@@ -1,0 +1,20 @@
+﻿body {
+    background: #E7F1F5;
+    padding: 0px;
+    margin: 0px;
+}
+
+hr {
+    margin: 10px 0px;
+    height: 1px;
+    background:  #9A9A9A;
+    color: #9A9A9A;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inline-center{
+    display: inline-block;
+    vertical-align: middle;
+}

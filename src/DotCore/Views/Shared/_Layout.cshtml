@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DotCore</title>
+
+    <environment names="Development">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="~/css/lib.min.css"/>
+        <link rel="stylesheet" href="~/css/site.min.css"/>
+    </environment>
+    
+    @RenderSection("links", required: false)
+</head>
+<body>
+
+<nav class="navbar navbar-toggleable">
+
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right"
+                    type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="hidden-sm-up flex-grow-1" style="width: 100%">
+                <a class="navbar-brand nav-link" href="#">.Core</a>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Questions" asp-action="Index">Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Ask" asp-action="Index">Ask</a>
+                    </li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+</nav>
+<main>
+    @RenderBody()
+</main>
+
+<environment names="Development">
+    <script src="~/js/lib.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</environment>
+
+@RenderSection("scripts", required: false)
+</body>
+</html>
