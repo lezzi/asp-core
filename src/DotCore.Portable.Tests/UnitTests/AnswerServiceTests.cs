@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DotCore.Portable.BusinessLogic;
 using DotCore.Portable.BusinessLogic.ApplicationServices;
 using DotCore.Portable.BusinessLogic.Exceptions;
 using DotCore.Portable.BusinessLogic.Models;
@@ -17,6 +18,15 @@ namespace DotCore.Portable.Tests.UnitTests
         [TestFixture]
         public class AnswerQuestionAsync : AnswerServiceTests
         {
+            [Test]
+            public void NullAnswer_ThrowArgumentNullException()
+            {
+                var answerService = new AnswerService(Mock.Of<IUserProvider>(), Mock.Of<IQuestionRepository>(), Mock.Of<IAnswerRepository>(),
+                    Mock.Of<IUnitOfWork>(), MockedServices.Mapper);
+
+                Assert.ThrowsAsync<ArgumentNullException>(()=> answerService.AnswerQuestionAsync(1, null));
+            }
+
             [Test]
             public async Task AddValidObject()
             {

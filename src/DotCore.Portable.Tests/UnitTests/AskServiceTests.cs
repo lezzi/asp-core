@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DotCore.Portable.BusinessLogic;
 using DotCore.Portable.BusinessLogic.ApplicationServices;
 using DotCore.Portable.BusinessLogic.Models;
 using DotCore.Portable.DataAccess;
@@ -22,6 +23,15 @@ namespace DotCore.Portable.Tests.UnitTests
         [TestFixture]
         public class AskQuestionAsync : AskServiceTests
         {
+            [Test]
+            public void NullQuestion_ThrowArgumentNullException()
+            {
+                var askService = new AskService(Mock.Of<IUserProvider>(), Mock.Of<IQuestionRepository>(),
+                    Mock.Of<IUnitOfWork>(), MockedServices.Mapper);
+              
+                Assert.ThrowsAsync<ArgumentNullException>(() => askService.AskQuestionAsync(null));
+            }
+
             [Test]
             public async Task AddValidObject()
             {
